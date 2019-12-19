@@ -1,0 +1,110 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background: 
+    linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, black 25%, transparent 25%),
+    linear-gradient(45deg, black 25%, transparent 25%);	
+    background-size: 2em 2em;
+    background-color: #232323;
+    font-family: 'Bangers', cursive;
+    color:white;
+}
+
+.title h1{
+    padding:20px 0;
+    text-align: center;
+    font-size:2.9em;
+    text-transform: uppercase;
+}
+
+.container{
+    background: #2b3784;
+    width:90%;
+    max-width: 1000px;
+    margin:.6em auto;
+
+    display:grid;
+    grid-gap:1.6em;
+    grid-template-columns:repeat(5, 1fr);
+}
+
+.container > header,
+.container > .content,
+.container > .sidebar,
+.container > .footer,
+.container > div{
+    padding:20px;
+    background:#b11313;
+    border:1px solid #fff ;
+}
+
+.container > header,
+.container .footer{
+    grid-column:1 /6;
+}
+.container .content{
+    grid-column:span 3;
+}
+.container > .sidebar{
+    grid-column: span 2;
+    background-color:  #DF1F2D;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+.container > .sidebar img{
+    width:100%;
+    margin-top:5px;
+}
+
+
+.content > .article{
+    background:#447BBE;
+    padding:20px;
+    margin-top:5px;
+
+}
+
+.content .article h1, 
+.content .article p{
+    padding:10px;
+}
+
+
+.container > .related-posts{
+    background:#2d3436;
+    height: 180px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease;
+}
+.container > .related-posts:hover{
+    cursor:pointer;
+    background: #ffffff;
+    color:#000000;
+    border:1px solid black;
+}
+
+
+@media screen and (max-width:768px){
+    .container > header{
+        text-align: center;
+    }
+    .container .content{
+        grid-column: 1 /-1;
+    }
+    .container > .sidebar{
+        grid-column: 1 /-1;
+    }
+    .container > .related-posts{
+        grid-column: 1 /-1;
+    }
+}
